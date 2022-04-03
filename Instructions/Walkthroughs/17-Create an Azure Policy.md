@@ -1,13 +1,19 @@
 ---
 wts:
-    title: '17 - Creare un’istanza di Criteri di Azure (10 min)'
-    module: 'Modulo 05: Descrizione delle funzionalità di identità, governance, privacy e conformità'
+  title: 17. Creare un'istanza di Criteri di Azure (10 min)
+  module: 'Module 05: Describe identity, governance, privacy, and compliance features'
+ms.openlocfilehash: 2811044ec560b0ac42f49a578666ed1694feb32a
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907931"
 ---
-# 17. Creare un'istanza di Criteri di Azure (10 min)
+# <a name="17---create-an-azure-policy-10-min"></a>17. Creare un'istanza di Criteri di Azure (10 min)
 
 In questa procedura dettagliata verrà creata un'istanza di Criteri di Azure per limitare la distribuzione delle risorse di Azure a una località specifica.
 
-# Attività 1. Creare un'assegnazione di criteri 
+# <a name="task-1-create-a-policy-assignment"></a>Attività 1: Creare un'assegnazione di criteri 
 
 In questa attività verrà creato il criterio per le località consentite, che verrà assegnato alla sottoscrizione. 
 
@@ -15,7 +21,7 @@ In questa attività verrà creato il criterio per le località consentite, che v
 
 2. Nel pannello **Tutti i servizi** cercare e selezionare **Criteri**, quindi nella sezione **Creazione** fare clic su **Definizioni**.  Esaminare l'elenco di definizioni di criteri predefinite. Ad esempio, nell'elenco a discesa **Categoria** selezionare solo **Calcolo**. La definizione **SKU di macchine virtuali consentiti** consente di specificare un set di SKU di macchine virtuali che l'organizzazione può distribuire.
 
-3. Tornare nella pagina **Criteri**, quindi nella sezione **Creazione** fare clic su **Assegnazioni**. Un'assegnazione è un criterio assegnato per l'implementazione in uno specifico ambito. Ad esempio, una definizione può essere assegnata all'ambito della sottoscrizione. 
+3. Tornare nella pagina **Criteri**, quindi nella sezione **Creazione** fare clic su **Assegnazioni**. Un'assegnazione è un criterio che è stato assegnato per l'implementazione in un ambito specifico. Ad esempio, è possibile assegnare una definizione all'ambito della sottoscrizione. 
 
 4. Fare clic su **Assegna criterio** nella parte superiore della pagina **Criteri - Assegnazioni**.
 
@@ -23,8 +29,8 @@ In questa attività verrà creato il criterio per le località consentite, che v
 
       | Impostazione | Valore | 
     | --- | --- |
-    | Scope| **Usare l'impostazione predefinita selezionata**|
-    | Definizione del criterio | fare clic sui puntini sospensivi, cercare **Località consentite**, quindi fare clic su **Seleziona** |
+    | Ambito| **Usare l'impostazione predefinita selezionata**|
+    | Definizione di criteri | fare clic sui puntini sospensivi, cercare **Località consentite**, quindi fare clic su **Seleziona** |
     | Nome assegnazione | **Località consentite** |
     
     ![Screenshot del riquadro Scope con i valori dei campi inseriti e il pulsante Seleziona evidenziato. ](../images/1402.png)
@@ -32,13 +38,13 @@ In questa attività verrà creato il criterio per le località consentite, che v
 
     **Nota**: l'ambito determina le risorse o i gruppi di risorse a cui si applica l'assegnazione dei criteri. In questo caso, sarebbe possibile assegnare questo criterio a un gruppo di risorse specifico, ma è stato scelto il livello di sottoscrizione. Tenere presente che è possibile escludere risorse in base alla configurazione dell'ambito. Le esclusioni sono facoltative.
 
-    **Nota**: la definizione del criterio **Località consentite** consente di specificare una località in cui devono essere distribuite tutte le risorse. Se si sceglie una località diversa, la distribuzione non sarà consentita. Per altre informazioni, vedere la pagina [Esempi di Criteri di Azure](https://docs.microsoft.com/it-it/azure/governance/policy/samples/index).
+    **Nota**: la definizione del criterio **Località consentite** consente di specificare una località in cui devono essere distribuite tutte le risorse. Se si sceglie una località diversa, la distribuzione non sarà consentita. Per altre informazioni, vedere la pagina [Esempi di Criteri di Azure](https://docs.microsoft.com/en-us/azure/governance/policy/samples/index).
 
    ![Screenshot del riquadro Definizioni disponibili con vari campi evidenziati e il criterio Controlla macchine virtuali che non usano dischi gestiti selezionato.](../images/1403.png)
 
 9. L'assegnazione del criterio **Località consentite** è riportata nel riquadro **Criteri - Assegnazioni** ed è ora implementata, applicando il criterio al livello di ambito specificato (sottoscrizione).
 
-# Attività 2. Testare il criterio Località consentite
+# <a name="task-2-test-allowed-location-policy"></a>Attività 2: Testare il criterio Località consentite
 
 In questa attività verrà testato il criterio Località consentite. 
 
@@ -48,16 +54,16 @@ In questa attività verrà testato il criterio Località consentite.
 
     | Impostazione | Valore | 
     | --- | --- |
-    | Sottoscrizione | **Usare l'impostazione predefinita fornita** |
-    | Gruppo di risorse | **myRGPolicy** (Crea nuovo) |
-    | Nome account di archiviazione | **storageaccountxxxx** |
-    | Località | **(Stati Uniti) Stati Uniti orientali** |
+    | Subscription | **Usare l'impostazione predefinita fornita** |
+    | Resource group | **myRGPolicy** (Crea nuovo) |
+    | Nome dell'account di archiviazione | **storageaccountxxxx** |
+    | Location | **(Stati Uniti) Stati Uniti orientali** |
 
 3. Fare clic su **Rivedi e crea** e quindi su **Crea**. 
 
 4. Verrà visualizzato il messaggio di errore **distribuzione non riuscita**, indicante che questa risorsa non è consentita dai criteri, incluso il criterio **Località consentite**.
 
-# Attività 3. Eliminare l'assegnazione del criterio
+# <a name="task-3-delete-the-policy-assignment"></a>Attività 3: Eliminare l'assegnazione di criteri
 
 In questa attività verrà rimossa l'assegnazione del criterio Località consentite e ne verrà verificata l'eliminazione. 
 
@@ -83,4 +89,4 @@ L'assegnazione del criterio verrà eliminata per assicurare che le eventuali ope
 
 Congratulazioni! È stata creata un'istanza di Criteri di Azure per limitare la distribuzione delle risorse di Azure in un determinato data center.
 
-**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse, quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.
+**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse e quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.

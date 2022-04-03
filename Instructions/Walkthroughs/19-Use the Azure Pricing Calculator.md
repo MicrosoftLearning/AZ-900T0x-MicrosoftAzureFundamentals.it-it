@@ -1,33 +1,39 @@
 ---
 wts:
-    title: '19 - Usare il Calcolatore dei prezzi di Azure (10 min)'
-    module: 'Modulo 06: Descrizione di Gestione costi di Azure e Contratti di servizio'
+  title: 19 - Usare il Calcolatore dei prezzi di Azure (10 min)
+  module: 'Module 06: Describe Azure cost management and service level agreements'
+ms.openlocfilehash: 9b071ca3caa80cc8f78541a61010b5b2d0fe8053
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907874"
 ---
-# 19 - Usare il Calcolatore dei prezzi di (10 min)
+# <a name="19---use-the-pricing-calculator-10-min"></a>19 - Usare il Calcolatore dei prezzi di (10 min)
 
 In questa procedura dettagliata verrà usato il Calcolatore dei prezzi di Azure per generare una stima dei costi relativi a una macchina virtuale di Azure e alle risorse di rete associate.
 
-# Attività 1. Configurare il Calcolatore dei prezzi
+# <a name="task-1-configure-the-pricing-calculator"></a>Attività 1: Configurare il Calcolatore dei prezzi
 
 In questa attività verrà stimato il costo di un'infrastruttura di esempio usando il Calcolatore dei prezzi di Azure. 
 
 **Nota**: per creare una stima del Calcolatore dei prezzi di Azure, questa procedura dettagliata prevede configurazioni di esempio per la VM e per le risorse correlate. Usare queste configurazioni di esempio oppure in alternativa inserire nel Calcolatore dei prezzi di Azure i dettagli dei requisiti delle risorse *effettive*.
 
-1. In un browser passare alla pagina Web [Calcolatore prezzi](https://azure.microsoft.com/it-it/pricing/calculator/).
+1. In un browser passare alla pagina Web [Calcolatore prezzi](https://azure.microsoft.com/en-us/pricing/calculator/).
 
 2. Per aggiungere i dettagli della configurazione della VM, fare clic su **Macchine virtuali** nella scheda **Prodotti**. Scorrere in basso per visualizzare i dettagli delle macchine virtuali. 
 
 3. Sostituire i testi **La tua stima** e **Macchine virtuali** con nomi più descrittivi per la stima del Calcolatore dei prezzi di Azure e per la configurazione della VM. L'esempio di questa procedura dettagliata usa **My Pricing Calculator Estimate** per la stima e **Windows VM** per la configurazione della VM.
 
-   ![Screenshot dell'area di configurazione della VM all'interno della pagina Web di stima del Calcolatore dei prezzi di Azure. Il nome della stima e il nome della configurazione della VM evidenziati indicano come aggiungere un nome di stima e un nome di configurazione della VM in una stima del Calcolatore dei prezzi di Azure.](../images/1901.png)
+   ![Screenshot dell'area di configurazione della VM all'interno della pagina Web di stima del Calcolatore dei prezzi di Azure. Il nome della stima e il nome della configurazione della VM evidenziati indicano come aggiungere un nome per la stima e la configurazione della VM in una stima del Calcolatore dei prezzi di Azure.](../images/1901.png)
 
 4. Modificare la configurazione predefinita della VM.
 
     | Impostazioni | Valore |
     | -- | -- |
-    | Area | **Europa settentrionale** |
+    | Region | **Europa settentrionale** |
     | Sistema operativo | **Windows** |
-    | Tipo | **(solo sistema operativo)** |
+    | Tipo | **(Solo sistema operativo)** |
     | Livello | **Standard** |  
     | Istanza | **A2: 2 core, 3,5 GB di RAM, 135 GB di archiviazione temporanea** |
 
@@ -39,17 +45,17 @@ In questa attività verrà stimato il costo di un'infrastruttura di esempio usan
 
    ![Screenshot dell'area Opzioni per il risparmio della VM all'interno della pagina Web di stima del Calcolatore dei prezzi di Azure. L'opzione di fatturazione con pagamento in base al consumo evidenziata indica come specificare un'opzione di fatturazione per una VM all'interno di una stima del Calcolatore dei prezzi di Azure.](../images/1903.png)
 
-6. In Azure un mese è definito come 730 ore. Se la VM deve essere disponibile il 100% del tempo ogni mese, impostare il valore di ore al mese su `730`. L'esempio di questa procedura dettagliata richiede che una VM sia disponibile il 50% del tempo ogni mese.
+6. In Azure un mese è definito come 730 ore. Se la macchina virtuale deve essere disponibile il 100% del tempo ogni mese, impostare il valore di ore al mese su `730`. L'esempio di questa procedura dettagliata richiede che una VM sia disponibile il 50% del tempo ogni mese.
 
-    Lasciare il numero di VM impostato su `1` e cambiare il valore di ore al mese in `365`.
+    Lasciare il numero di macchine virtuali impostato su `1` e cambiare il valore di ore al mese in `365`.
 
    ![Screenshot dell'area Opzioni per il risparmio della VM all'interno della pagina Web di stima del Calcolatore dei prezzi di Azure. Le opzioni evidenziate relative al numero di istanze di VM e al numero di ore al mese indicano come specificare il numero di istanze e il numero di ore al mese per una VM all'interno di una stima del Calcolatore dei prezzi di Azure.](../images/1904.png)
 
-7. Nel riquadro **Managed Disks** modificare la configurazione di archiviazione predefinita della VM.
+7. Nel riquadro **Managed OS Disks** modificare la configurazione di archiviazione predefinita della VM.
 
-    | Livello | Dimensione disco | Numero di dischi | Snapshot | Transazioni di archiviazione |
+    | Livello | Dimensioni del disco | Numero di dischi | Snapshot | Transazioni di archiviazione |
     | ---- | --------- | --------------- | -------- | -------------------- |
-    | HDD Standard | S30: 1024 GiB | 1 | No | 10.000 |
+    | HDD Standard | S30: 1024 GiB | 1 | Off | 10,000 |
 
    ![Screenshot dell'area di opzioni relative a Managed Disks all'interno della pagina Web di stima del Calcolatore dei prezzi di Azure. Le opzioni evidenziate relative al tipo di livello, alla dimensione del disco e al numero di transazioni di archiviazione indicano come specificare una configurazione di archiviazione per una VM all'interno di una stima del Calcolatore dei prezzi di Azure.](../images/1905.png)
 
@@ -59,7 +65,7 @@ In questa attività verrà stimato il costo di un'infrastruttura di esempio usan
 
 9. Aggiungere un nome per la configurazione della larghezza di banda della VM. L'esempio di questa procedura dettagliata usa il nome **Bandwidth: Windows VM**. Modificare la configurazione predefinita della larghezza di banda aggiungendo i dettagli seguenti.
 
-    | Area | Zona 1 Trasferimento dei dati in uscita |
+    | Region | Zona 1 Trasferimento dei dati in uscita |
     | ------ | -------------------------------------- |
     | Europa settentrionale | 50 GB |
 
@@ -73,9 +79,9 @@ In questa attività verrà stimato il costo di un'infrastruttura di esempio usan
 
     | Impostazioni | Valore |
     | -- | -- |
-    | Area | **Europa settentrionale** |
-    | Livello | **Basic** |
-    | Dimensioni | **Piccola** |
+    | Region | **Europa settentrionale** |
+    | Livello | **Base** |
+    | Dimensione | **Small** |
     | Istanze | **1** |  
     | Ore | **365** |
     | Dati elaborati | **50 GB** |
@@ -84,7 +90,7 @@ In questa attività verrà stimato il costo di un'infrastruttura di esempio usan
     ![Screenshot dell'area di configurazione del gateway applicazione all'interno della pagina Web del Calcolatore dei prezzi di Azure.](../images/1909.png)
 
 
-# Attività 2. Esaminare la stima dei prezzi
+# <a name="task-2-review-the-pricing-estimate"></a>Attività 2: Esaminare la stima dei prezzi
 
 In questa attività verranno analizzati i risultati del Calcolatore dei prezzi di Azure. 
 

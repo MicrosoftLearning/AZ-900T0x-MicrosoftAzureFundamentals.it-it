@@ -1,9 +1,15 @@
 ---
 wts:
-    title: '21 - Calcolare i contratti di servizio compositi (5 min)'
-    module: 'Modulo 06: Descrizione di Gestione costi di Azure e Contratti di servizio'
+  title: 21. Calcolare i Contratti di servizio compositi (5 min)'
+  module: 'Module 06: Describe Azure cost management and service level agreements'
+ms.openlocfilehash: 1d27d18cd1a0b2ad6ab09c7fc65a51d5a8f13711
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907689"
 ---
-# 21. Calcolare i Contratti di servizio compositi (5 min)
+# <a name="21---calculate-composite-slas-5-min"></a>21. Calcolare i Contratti di servizio compositi (5 min)'
 
 In questa procedura dettagliata verrà determinata la disponibilità di contratti di servizio per i servizi di Azure e quindi verrà calcolata la disponibilità prevista basata sul contratto di servizio composito per un'applicazione.
 
@@ -14,29 +20,29 @@ L'applicazione di esempio è costituita da questi servizi di Azure. Non verranno
 + **Gateway applicazione**: per gestire l'accesso all'applicazione e la scalabilità. 
 + **Database SQL di Azure**: per archiviare i dati dell'applicazione. 
 
-# Attività 1. Determinare i valori in percentuale del tempo di attività del Contratto di servizio per l'applicazione
+# <a name="task-1-determine-the-sla-uptime-percentage-values-for-our-application"></a>Attività 1: Determinare i valori in percentuale del tempo di attività del Contratto di servizio per l'applicazione
 
-1. In un browser passare alla pagina [Riepilogo dei contratti di servizio per i servizi di Azure](https://azure.microsoft.com/it-it/support/legal/sla/summary/).
+1. In un browser passare alla pagina [Riepilogo dei contratti di servizio per i servizi di Azure](https://azure.microsoft.com/en-us/support/legal/sla/summary/).
 
-2. Individuare il valore del tempo di attività del contratto di servizio per **Servizio app**, **99,95%**. Fare clic su **L'utente deve visualizzare i dettagli completi** e quindi espandere **Dettagli del Contratto di Servizio**. Leggere le sezioni **Percentuale del Tempo di Attività Mensile** e **Credito di Servizio**.
+2. Individuare il valore del tempo di attività del contratto di servizio per **Servizio app**, **99,95%** . Fare clic su **L'utente deve visualizzare i dettagli completi** e quindi espandere **Dettagli del Contratto di Servizio**. Leggere le sezioni **Percentuale del Tempo di Attività Mensile** e **Credito di Servizio**.
 
-3. Tornare nella pagina Web dei contratti di servizio e individuare il servizio **Azure Active Directory B2C**. Il valore del tempo di attività del contratto di servizio è **99,9%**. 
+3. Tornare nella pagina Web dei contratti di servizio e individuare il servizio **Azure Active Directory B2C**. Il valore del tempo di attività del contratto di servizio è **99,9%** . 
 
-4. Individuare il valore del tempo di attività del contratto di servizio per **Gateway applicazione**, **99,95%**. 
+4. Individuare il valore del tempo di attività del contratto di servizio per **Gateway applicazione**, **99,95%** . 
 
-5. Il database SQL di Azure usa livelli Premium ma non è configurato per distribuzioni con ridondanza della zona. Individuare il valore del tempo di attività del contratto di servizio per **Database SQL di Azure**, **99,99%**. 
+5. Il database SQL di Azure usa livelli Premium ma non è configurato per distribuzioni con ridondanza della zona. Individuare il valore del tempo di attività del contratto di servizio per **Database SQL di Azure**, **99,99%** . 
 
     **Nota**: esistono valori del tempo di attività diversi per le varie configurazioni e distribuzioni del database SQL di Azure. È importante sapere con certezza i valori richiesti del tempo di attività quando si pianificano la distribuzione e la configurazione e si determinano i relativi costi. Piccole modifiche nel tempo di attività possono avere un impatto sui costi dei servizi, oltre ad aumentare eventualmente la complessità della configurazione. Altri servizi che potrebbero essere interessanti nella pagina Web di riepilogo dei contratti di servizio di Azure sono **Macchine virtuali**, **Account di archiviazione** e **Cosmos DB**.
 
-# Attività 2. Calcolare il tempo di attività in percentuale del contratto di servizio composito per un'applicazione
+# <a name="task-2-calculate-the-application-composite-sla-percentage-uptime"></a>Attività 2: Calcolare il tempo di attività in percentuale del contratto di servizio composito per un'applicazione
 
 1. Se i servizi che compongono l'applicazione non sono disponibili, l'applicazione non sarà disponibile per l'accesso e l'uso da parte degli utenti. Di conseguenza il tempo di attività totale per l'applicazione è costituito da quanto segue:
 
-    **% del tempo di attività del servizio app** X **% del tempo di attività di Azure AD B2C** X **% del tempo di attività del gateway applicazione di Azure** X **% del tempo di attività del database SQL di Azure** = **% totale del tempo di attività**
+    **% del tempo di attività del servizio app** X **% del tempo di attività di Azure AD B2C** X **% del tempo di attività del gateway applicazione di Azure** X **% del tempo di attività del database SQL di Azure** =  **% totale del tempo di attività**
 
     che in termini di percentuale equivale a:
 
-    **99,95%** X **99,9%** X **99,95%** X **99,99%** = **99,79%**
+    **99,95%** X **99,9%** X **99,95%** X **99,99%**  = **99,79%**
 
     Questa è la disponibilità prevista basata sul contratto di servizio dell'applicazione con i servizi e l'architettura correnti.
 

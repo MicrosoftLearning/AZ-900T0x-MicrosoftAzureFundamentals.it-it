@@ -1,32 +1,38 @@
 ---
 wts:
-    title: '12 - Implementare Azure Key Vault (5 min)'
-    module: 'Modulo 04: Descrizione delle funzionalità di sicurezza generali e di rete'
+  title: 12. Implementare Azure Key Vault (5 min)
+  module: 'Module 04: Describe general security and network security features'
+ms.openlocfilehash: 1381900fc934ddbc092faf42f0b0a366364a9872
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907744"
 ---
-# 12. Implementare Azure Key Vault (5 min)
+# <a name="12---implement-azure-key-vault-5-min"></a>12. Implementare Azure Key Vault (5 min)
 
 In questa procedura dettagliata verrà creata un'istanza di Azure Key Vault al cui interno verrà creato un segreto che rende disponibile una password gestita centralmente e archiviata in modo sicuro da usare con le applicazioni.
 
-# Attività 1. Creare un'istanza di Azure Key Vault 
+# <a name="task-1-create-an-azure-key-vault"></a>Attività 1: Creare un'istanza di Azure Key Vault 
 
 1. Accedere al [portale di Azure](https://portal.azure.com).
 
-2. Nel pannello **Tutti i servizi** cercare e selezionare **Insiemi di credenziali delle chiavi**, quindi selezionare **+ Aggiungi, + Nuovo + Crea**.
+2. Nel pannello **Tutti i servizi** cercare e selezionare **Insiemi di credenziali delle chiavi** e quindi selezionare **+ Aggiungi, + Nuovo + Crea **.
 
 3. Configurare l'insieme di credenziali delle chiavi (sostituire **xxxx** con lettere e numeri in modo che il nome sia univoco a livello globale). Lasciare i valori predefiniti per tutto il resto.
 
     | Impostazione | Valore | 
     | --- | --- |
-    | Sottoscrizione | **Usare l'impostazione predefinita fornita** |
-    | Gruppo di risorse | **Crea nuovo gruppo di risorse** |
+    | Subscription | **Usare l'impostazione predefinita fornita** |
+    | Resource group | **Creare un nuovo gruppo di risorse** |
     | Nome insieme di credenziali delle chiavi | **keyvaulttestxxx** |
-    | Località | **Stati Uniti orientali** |
+    | Location | **Stati Uniti orientali** |
     | Piano tariffario | **Standard** |
     
     **Nota** sostituire **xxxx** per trovare un nome univoco.
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**. 
 
-5. Una volta completato il provisioning del nuovo insieme di credenziali delle chiavi, fare clic su **Vai alla risorsa**. In alternativa, è possibile individuare il nuovo insieme di credenziali delle chiavi tramite ricerca. 
+5. Una volta effettuato il provisioning del nuovo insieme di credenziali delle chiavi, fare clic su **Vai alla risorsa**. In alternativa, è possibile individuare il nuovo insieme di credenziali delle chiavi tramite ricerca. 
 
 6. Fare clic sulla scheda **Panoramica** dell'insieme di credenziali delle chiavi e prendere nota dell'**URI dell'insieme di credenziali delle chiavi**. Questo URI sarà necessario per le applicazioni che usano l'insieme di credenziali tramite le API REST.
 
@@ -34,7 +40,7 @@ In questa procedura dettagliata verrà creata un'istanza di Azure Key Vault al c
 
     **Nota**: l'account Azure è l'unico autorizzato a eseguire operazioni in questo nuovo insieme di credenziali. È possibile modificare le autorizzazioni nella sezione **Criteri di accesso** in **Impostazioni**.
 
-# Attività 2. Aggiungere un segreto all'insieme di credenziali delle chiavi
+# <a name="task-2-add-a-secret-to-the-key-vault"></a>Attività 2: Aggiungere un segreto all'insieme di credenziali delle chiavi
         
 In questa attività verrà aggiunta una password all'insieme di credenziali delle chiavi. 
 
@@ -59,4 +65,4 @@ In questa attività verrà aggiunta una password all'insieme di credenziali dell
 
 Congratulazioni! È stata creata un'istanza di Azure Key Vault al cui interno è stato creato un segreto che rende disponibile una password gestita centralmente e archiviata in modo sicuro da usare con le applicazioni.
 
-**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse, quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.
+**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse e quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.

@@ -1,61 +1,67 @@
 ---
 wts:
-    title: '20 - Usare il Calcolatore del costo totale di proprietà di Azure (10 min)'
-    module: 'Modulo 06: Descrizione di Gestione costi di Azure e Contratti di servizio'
+  title: 20. Usare il Calcolatore del costo totale di proprietà di Azure (10 min)
+  module: 'Module 06: Describe Azure cost management and service level agreements'
+ms.openlocfilehash: 8044b922cef99fae814fb6418a33ed7334eb506b
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137908163"
 ---
-# 20. Usare il Calcolatore del costo totale di proprietà di Azure (10 min)
+# <a name="20---use-the-azure-tco-calculator-10-min"></a>20. Usare il Calcolatore del costo totale di proprietà di Azure (10 min)
 
 
 In questa procedura dettagliata verrà usato il Calcolatore del costo totale di proprietà (TCO) per generare un report di confronto sui costi per un ambiente locale.
 
 **Nota**: questa procedura dettagliata include definizioni di esempio di un'infrastruttura locale e dei carichi di lavoro per una tipico data center. Per creare un report del calcolatore del costo totale di proprietà, usare le definizioni di esempio oppure fornire i dettagli dell'infrastruttura locale e dei carichi di lavoro *effettivi*.
 
-# Attività 1. Configurare il Calcolatore del costo totale di proprietà (TCO)
+# <a name="task-1-configure-the-tco-calculator"></a>Attività 1: Configurare il Calcolatore del costo totale di proprietà (TCO)
 
 In questa attività verranno aggiunte informazioni sull'infrastruttura nel calcolatore. 
 
-1. In un browser passare alla pagina [Calcolatore del costo totale di proprietà](https://azure.microsoft.com/it-it/pricing/tco/calculator/).
+1. In un browser passare alla pagina [Calcolatore del costo totale di proprietà](https://azure.microsoft.com/en-us/pricing/tco/calculator/).
 
 2. Per aggiungere i dettagli dell'infrastruttura server locale, fare clic su **+ Aggiungi il carico di lavoro del server** nel riquadro **Definisci i tuoi carichi di lavoro**.
 
     | Impostazioni | Valore |
     | -- | -- |
-    | Nome | **Server: Windows VMs** |
+    | Nome | **Server: VM Windows** |
     | Carico di lavoro | **Server Windows/Linux** |
     | Ambiente | **Macchine virtuali** |
     | Sistema operativo | **Windows** |  
-    | Macchine virtuali | **50** |
+    | VM | **50** |
     | Virtualizzazione | **Hyper-V** |
     | Core | **8**|
     | RAM (GB) | **16** |
-    | Ottimizza in base a | **CPU** |
-    | Windows Server 2008/2008 R2 | **No** |
+    | Ottimizza entro | **CPU** |
+    | Windows Server 2008/2008 R2 | **Disattivato** |
 
 3. Selezionare **+ Aggiungi il carico di lavoro del server** per creare una riga per una nuova definizione di carichi di lavoro del server. 
 
     | Impostazioni | Valore |
     | -- | -- |
-    | Nome | **Server: Linux VMs** |
+    | Nome | **Server: VM Linux** |
     | Carico di lavoro | **Server Windows/Linux** |
     | Ambiente | **Macchine virtuali** |
     | Sistema operativo | **Linux** |  
-    | Macchine virtuali | **50** |
+    | VM | **50** |
     | Virtualizzazione | **VMware** |
     | Core | **8**|
     | RAM (GB) | **16** |
-    | Ottimizza in base a | **CPU** |
-    | Windows Server 2008/2008 R2 | **No** |
+    | Ottimizza entro | **CPU** |
+    | Windows Server 2008/2008 R2 | **Disattivato** |
 
 4. Nel riquadro **Archiviazione** fare clic su **Aggiungi le risorse di archiviazione**.
 
     | Impostazioni | Valore |
     | -- | -- |
     | Nome | **Archiviazione server** |
-    | Tipo di risorse di archiviazione | **Disco locale/SAN** |
-    | Tipo di disco | **Unità disco rigido** |
+    | Tipo di archiviazione | **Disco locale/SAN** |
+    | Tipo di disco | **HDD** |
     | Capacità | **60 TB** |  
     | Backup | **120 TB** |
-    | Archivio | **0 TB** |
+    | Archiviazione | **0 TB** |
 
 5. Nel riquadro **Rete** aggiungere larghezza di banda. 
 
@@ -63,7 +69,7 @@ In questa attività verranno aggiunte informazioni sull'infrastruttura nel calco
     | -- | -- |
     | Larghezza di banda in uscita | 15 TB|
 
-6. Fare clic su **Successivi**.
+6. Fare clic su **Avanti**.
 
 7. Esplorare le opzioni e apportare le eventuali modifiche necessarie. 
 
@@ -71,9 +77,9 @@ In questa attività verranno aggiunte informazioni sull'infrastruttura nel calco
     | -- | -- |
     | Valuta | **Euro** |
 
-8. Fare clic su **Successivi**.
+8. Fare clic su **Avanti**.
 
-# Attività 2. Esaminare i risultati e salvare una copia
+# <a name="task-2-review-the-results-and-save-a-copy"></a>Attività 2: Esaminare i risultati e salvare una copia
 
 In questa attività verranno esaminate le raccomandazioni per il risparmio sui costi e verrà scaricato un report. 
 
@@ -82,9 +88,9 @@ In questa attività verranno esaminate le raccomandazioni per il risparmio sui c
     | Impostazioni | Valore |
     | -- | -- |
     | Intervallo di tempo| **3 anni** |
-    | Area | **Europa settentrionale** |
+    | Region | **Europa settentrionale** |
 
-2. Per modificare le informazioni specificate, passare alla fine della pagina e fare clic su **Indietro**. 
+2. Per modificare le informazioni specificate, andare alla fine della pagina e fare clic su **Indietro**. 
 
 3. Per salvare o stampare una copia in formato PDF del report, fare clic su **Scarica**.
 

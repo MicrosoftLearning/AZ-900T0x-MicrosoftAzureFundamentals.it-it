@@ -1,13 +1,19 @@
 ---
 wts:
-    title: '07 - Implementare un hub IoT di Azure (10 min)'
-    module: 'Modulo 03: Descrizione delle soluzioni e degli strumenti di gestione principali'
+  title: 07. Implementare un hub IoT di Azure (10 min)
+  module: 'Module 03: Describe core solutions and management tools'
+ms.openlocfilehash: c2098875e07323c84eac8a405c8a59ad70eaabcd
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137908050"
 ---
-# 07. Implementare un hub IoT di Azure (10 min)
+# <a name="07---implement-an-azure-iot-hub-10-min"></a>07. Implementare un hub IoT di Azure (10 min)
 
 In questa procedura dettagliata verrà configurato un nuovo hub IoT di Azure nel portale di Azure, quindi verrà autenticata una connessione a un dispositivo IoT tramite il simulatore di dispositivi online Raspberry Pi. I dati e i messaggi dei sensori vengono passati dal simulatore Raspberry Pi all'hub IoT di Azure ed è possibile visualizzare le metriche relative ai messaggi nel portale di Azure.
 
-# Attività 1. Creare un hub IoT 
+# <a name="task-1-create-an-iot-hub"></a>Attività 1: Creare un hub IoT 
 
 In questa attività verrà creato un hub IoT. 
 
@@ -19,12 +25,12 @@ In questa attività verrà creato un hub IoT.
 
     | Impostazioni | Valore |
     |--|--|
-    | Sottoscrizione | **Mantenere l'impostazione predefinita** |
-    | Gruppo di risorse | **Crea nuovo gruppo di risorse** |
+    | Subscription | **Mantenere l'impostazione predefinita fornita** |
+    | Gruppo di risorse | **Creare un nuovo gruppo di risorse** |
     | Nome hub IoT | **my-hub-groupxxxxx** |
-    | Area | **Stati Uniti orientali** |
+    | Region | **Stati Uniti orientali** |
 
-    **Nota** - Cambiare **xxxx** in modo che il valore di **Nome hub IoT** sia univoco.
+    **Nota** - Ricordarsi di cambiare **xxxxx** in modo che il valore di **Nome hub IoT** sia univoco.
 
 4. Passare alla scheda **Gestione** e usare l'elenco a discesa per impostare **Piano tariffario e livello di scalabilità** su **S1: Livello Standard**.
 
@@ -34,17 +40,17 @@ In questa attività verrà creato un hub IoT.
 
 7. Attendere che l'istanza dell'hub IoT di Azure venga distribuita. 
 
-# Attività 2. Aggiungere un dispositivo IoT
+# <a name="task-2-add-an-iot-device"></a>Attività 2: Aggiungere un dispositivo IoT
 
 In questa attività verrà aggiunto un dispositivo IoT all'hub IoT. 
 
 1. Al termine della distribuzione, fare clic su **Vai alla risorsa** nel pannello della distribuzione. In alternativa, nel pannello **Tutti i servizi** cercare e selezionare **Hub IoT** e individuare la nuova istanza dell'hub IoT
 
-	![Screenshot della distribuzione in corso e della notifica di operazione completata nel portale di Azure.](../images/0601.png)
+    ![Screenshot della distribuzione in corso e della notifica di operazione completata nel portale di Azure.](../images/0601.png)
 
-2. Per aggiungere un nuovo dispositivo IoT, scorrere in basso fino alla sezione **Gestione dispositivi** e fare clic su **Dispositivi**. Fare quindi clic su **+ Aggiungi dispositivo**.
+2. Per aggiungere un nuovo dispositivo IoT, scorrere verso il basso fino alla sezione **Gestione dispositivi** e fare clic su **Dispositivi**. Fare quindi clic su **+ Aggiungi dispositivo**.
 
-	![Screenshot del riquadro Dispositivi IoT evidenziato all'interno del pannello di esplorazione dell'hub IoT nel portale di Azure. Il pulsante Nuovo è evidenziato per illustrare come aggiungere una nuova identità di dispositivo IoT all'hub IoT.](../images/0602.png)
+    ![Screenshot del riquadro Dispositivi IoT evidenziato all'interno del pannello di esplorazione dell'hub IoT nel portale di Azure. Il pulsante Nuovo è evidenziato per illustrare come aggiungere una nuova identità di dispositivo IoT all'hub IoT.](../images/0602.png)
 
 3. Specificare un nome per il nuovo dispositivo IoT, **myRaspberryPi**, quindi fare clic sul pulsante **Salva**. Nell'hub IoT di Azure verrà creata una nuova identità di dispositivo IoT.
 
@@ -52,31 +58,31 @@ In questa attività verrà aggiunto un dispositivo IoT all'hub IoT.
 
 5. Selezionare **myRaspberryPi** e copiare il valore di **Stringa di connessione primaria**. Questa chiave verrà usata nell'attività successiva per autenticare una connessione con il simulatore Raspberry Pi.
 
-	![Screenshot della pagina Stringa di connessione primaria con l'icona Copia evidenziata.](../images/0603.png)
+    ![Screenshot della pagina Stringa di connessione primaria con l'icona Copia evidenziata.](../images/0603.png)
 
-# Attività 3. Testare il dispositivo con il simulatore Raspberry Pi
+# <a name="task-3-test-the-device-using-a-raspberry-pi-simulator"></a>Attività 3: Testare il dispositivo con il simulatore Raspberry Pi
 
 In questa attività il dispositivo verrà testato con il simulatore Raspberry Pi. 
 
-1. Aprire una nuova scheda del Web browser e digitare il seguente collegamento: https://aka.ms/RaspPi. Si accederà a un sito del simulatore Raspberry Pi. Se si ha tempo, leggere le informazioni sul simulatore Raspberry Pi. Una volta fatto, selezionare "**X**" per chiudere la finestra popup.
+1. Aprire una nuova scheda del Web browser e digitare questo collegamento https://aka.ms/RaspPi. Si accederà a un sito del simulatore Raspberry Pi. Se si ha tempo, leggere le informazioni sul simulatore Raspberry Pi. Al termine, selezionare "**X**" per chiudere la finestra popup.
 
 2. Sul lato destro dell'area del codice, individuare la riga 'const connectionString ='. Sostituirla con la stringa di connessione copiata dal portale di Azure. Notare che la stringa di connessione include le voci DeviceId (**myRaspberryPi**) e SharedAccessKey.
 
-	![Screenshot dell'area del codice all'interno del simulatore Raspberry Pi.](../images/0604.png)
+    ![Screenshot dell'area del codice all'interno del simulatore Raspberry Pi.](../images/0604.png)
 
 3. Fare clic su **Run** (Esegui) sotto l'area del codice per eseguire l'applicazione. L'output della console dovrebbe visualizzare i dati e i messaggi dei sensori inviati dal simulatore Raspberry Pi all'hub IoT di Azure. I dati e i messaggi vengono inviati ogni volta che il LED del simulatore Raspberry Pi lampeggia. 
 
-	![Screenshot della console del simulatore Raspberry Pi.  L'output della console visualizza i dati e i messaggi dei sensori inviati dal simulatore Raspberry Pi all'hub IoT di Azure.](../images/0605.png)
+    ![Screenshot della console del simulatore Raspberry Pi.  L'output della console visualizza i dati e i messaggi dei sensori inviati dal simulatore Raspberry Pi all'hub IoT di Azure.](../images/0605.png)
 
 5. Fare clic su **Stop** (Arresta) per interrompere l'invio di dati.
 
 6. Tornare al portale di Azure.
 
-7. Passare al pannello **Panoramica** dell'hub IoT e scorrere in basso fino a visualizzare le informazioni di **Utilizzo dell'hub IoT**. Per vedere i dati dell'ultima ora, cambiare l'intervallo di tempo in **Mostra dati per:**.
+7. Passare al pannello **Panoramica** dell'hub IoT e scorrere in basso fino a visualizzare le informazioni di **Utilizzo dell'hub IoT**. Per vedere i dati dell'ultima ora, cambiare l'intervallo di tempo in **Mostra dati per:** .
 
-	![Screenshot delle metriche nell'area sull'utilizzo dell'hub IoT del portale di Azure.](../images/0606.png)
+    ![Screenshot delle metriche nell'area sull'utilizzo dell'hub IoT del portale di Azure.](../images/0606.png)
 
 
 Congratulazioni! È stato configurato un hub IoT di Azure per raccogliere i dati dei sensori di un dispositivo IoT.
 
-**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse, quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.
+**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse e quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.

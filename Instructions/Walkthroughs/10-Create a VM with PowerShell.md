@@ -1,20 +1,26 @@
 ---
 wts:
-    title: '10 - Creare una VM con PowerShell (10 min)'
-    module: 'Modulo 03: Descrizione delle soluzioni e degli strumenti di gestione principali'
+  title: 10. Creare una VM con PowerShell (10 min)
+  module: 'Module 03: Describe core solutions and management tools'
+ms.openlocfilehash: a6c6e26b535658ebb01beac8037adcb5c15dc6e8
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907755"
 ---
-# 10. Creare una VM con PowerShell (10 min)
+# <a name="10---create-a-vm-with-powershell-10-min"></a>10. Creare una VM con PowerShell (10 min)
 
-In questa procedura dettagliata verrà configurato Cloud Shell, verrà usato il modulo Azure PowerShell per creare un gruppo di risorse e una macchina virtuale, quindi verranno esaminati i consigli di Azure Advisor. 
+In questa procedura dettagliata verrà configurato Cloud Shell, verrà usato il modulo Azure PowerShell per creare un gruppo di risorse e una macchina virtuale, quindi verranno esaminati gli elementi consigliati di Azure Advisor. 
 
-# Attività 1. Configurare Cloud Shell 
+# <a name="task-1-configure-the-cloud-shell"></a>Attività 1: Configurare Cloud Shell 
 
 In questa attività verrà configurato Cloud Shell. 
 
-1. Accedere al [portale di Azure](https://portal.azure.com). **Le credenziali di accesso si trovano nella scheda Risorse (subito accanto alla scheda Istruzioni)**
+1. Accedere al [portale di Azure](https://portal.azure.com). ** Le credenziali di accesso si trovano nella scheda delle risorse (subito accanto alla scheda Istruzioni). **
 2. Nel portale di Azure aprire **Azure Cloud Shell** facendo clic sull'icona nell'angolo in alto a destra.
 
-    ![Screenshot dell'icona Azure Cloud Shell nel portale di Azure.](../images/1002.png)
+    ![Screenshot dell'icona di Azure Cloud Shell nel portale di Azure.](../images/1002.png)
 
 3. Quando viene chiesto di selezionare **Bash** o **PowerShell**, selezionare **PowerShell**.
 
@@ -22,13 +28,13 @@ In questa attività verrà configurato Cloud Shell.
 
     | Impostazioni | Valori |
     |  -- | -- |
-    | Gruppo di risorse | **Crea nuovo gruppo di risorse** |
+    | Gruppo di risorse | **Creare un nuovo gruppo di risorse** |
     | Account di archiviazione (Creare un nuovo account di archiviazione e usare un nome che sia univoco a livello globale (ad esempio: cloudshellstoragemystorage )) | **cloudshellxxxxxxx** |
     | Condivisione file (creare nuova) | **shellstorage** |
 
 5. Selezionare **Crea account di archiviazione**
 
-# Attività 2. Creare un gruppo di risorse e una macchina virtuale
+# <a name="task-2-create-a-resource-group-and-virtual-machine"></a>Attività 2: Creare un gruppo di risorse e una macchina virtuale
 
 In questa attività verranno creati un gruppo di risorse e una macchina virtuale con PowerShell.  
 
@@ -53,19 +59,19 @@ In questa attività verranno creati un gruppo di risorse e una macchina virtuale
     -PublicIpAddressName "myPublicIpPS"
     ```
     
-4. Quando richiesto, specificare il nome utente (**azureuser**) e la password (**Pa$$w0rd1234**) che verranno configurati come account amministratore locale in  machines.azureadmin
+4. Quando richiesto, specificare il nome utente (**azureuser**) e la password (**Pa$$w0rd1234**) che verranno configurati come account amministratore locale in machines.azureadmin
 
 5. Una volta creata la macchina virtuale, chiudere il riquadro Cloud Shell della sessione PowerShell.
 
-6. Nel portale di Azure cercare **Macchine virtuali** e verificare che **myVMPS** sia in esecuzione. Questa operazione può richiedere alcuni minuti.
+6. Nel portale di Azure cercare **Macchine virtuali** e verificare che **myVMPS** sia in esecuzione. L'operazione potrebbe richiedere alcuni minuti.
 
     ![Screenshot della pagina Macchine virtuali con myVMPS in esecuzione.](../images/1001.png)
 
 7. Accedere alla nuova macchina virtuale ed esaminare le impostazioni in Panoramica e Rete per verificare che la distribuzione sia riuscita con le informazioni fornite. 
 
-# Attività 3. Eseguire comandi in Cloud Shell
+# <a name="task-3-execute-commands-in-the-cloud-shell"></a>Attività 3: Eseguire comandi in Cloud Shell
 
-In questa attività si sperimenterà con l'esecuzione dei comandi di PowerShell in Cloud Shell. 
+In questa attività si farà pratica con l'esecuzione dei comandi di PowerShell in Cloud Shell. 
 
 1. Nel portale di Azure aprire **Azure Cloud Shell** facendo clic sull'icona nell'angolo in alto a destra.
 
@@ -90,7 +96,7 @@ In questa attività si sperimenterà con l'esecuzione dei comandi di PowerShell 
     Get-AzVM -name myVMPS -status | Format-Table -autosize
     ```
 
-# Attività 4. Esaminare le raccomandazioni di Azure Advisor
+# <a name="task-4-review-azure-advisor-recommendations"></a>Attività 4: Esaminare le raccomandazioni di Azure Advisor
 
 **Nota:** questa stessa attività viene eseguita nel lab Creare una VM con l'interfaccia della riga di comando di Azure. 
 
@@ -98,7 +104,7 @@ In questa attività verranno esaminate le raccomandazioni di Azure Advisor per l
 
 1. Nel pannello **Tutti i servizi** cercare e selezionare **Advisor**. 
 
-2. Nel pannello **Advisor** selezionare **Panoramica**. Le raccomandazioni sono raggruppate in base ad Affidabilità, Sicurezza, Prestazioni e Costo. 
+2. Nel pannello **Advisor** selezionare **Panoramica**. Si noti che le raccomandazioni sono raggruppate in base ad Affidabilità, Sicurezza, Prestazioni e Costo. 
 
     ![Screenshot della pagina Panoramica di Advisor. ](../images/1003.png)
 
@@ -116,4 +122,4 @@ In questa attività verranno esaminate le raccomandazioni di Azure Advisor per l
 
 Congratulazioni! È stato configurato Cloud Shell, è stata creata una macchina virtuale con PowerShell, sono stati provati i comandi di PowerShell e sono state visualizzate le raccomandazioni di Advisor.
 
-**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse, quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.
+**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse e quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.

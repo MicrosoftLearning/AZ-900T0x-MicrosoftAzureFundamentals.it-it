@@ -1,13 +1,19 @@
 ---
 wts:
-    title: '05 - Creare un account di archiviazione BLOB (5 min)'
-    module: 'Modulo 02 - Descrizione dei servizi principali di Azure (carichi di lavoro)'
+  title: 05. Creare un account di archiviazione BLOB (5 min)
+  module: Module 02 - Core Azure Services (Workloads)
+ms.openlocfilehash: 554a3eb1c95b354e836fe22541f00fa1eb0bc2de
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137908091"
 ---
-# 05. Creare un account di archiviazione BLOB (5 min)
+# <a name="05---create-blob-storage-5-min"></a>05. Creare un account di archiviazione BLOB (5 min)
 
 In questa procedura dettagliata verrà creato un account di archiviazione e quindi si useranno i file di archiviazione BLOB.
 
-# Attività 1. Creare un account di archiviazione 
+# <a name="task-1-create-a-storage-account"></a>Attività 1: Creare un account di archiviazione 
 
 In questa attività verrà creato un nuovo account di archiviazione. 
 
@@ -19,14 +25,14 @@ In questa attività verrà creato un nuovo account di archiviazione.
 
     | Impostazione | Valore | 
     | --- | --- |
-    | Sottoscrizione | **Lasciare il valore predefinito** |
-    | Gruppo di risorse | **Crea nuovo gruppo di risorse** |
-    | Nome account di archiviazione | **storageaccountxxxxx** |
-    | Località | **(Stati Uniti) Stati Uniti orientali**  |
+    | Subscription | **Lasciare l'impostazione predefinita fornita** |
+    | Resource group | **Creare un nuovo gruppo di risorse** |
+    | Nome dell'account di archiviazione | **storageaccountxxxxx** |
+    | Location | **(Stati Uniti) Stati Uniti orientali**  |
     | Prestazioni | **Standard** |
-    | Ridondanza | **Archiviazione con ridondanza locale** |
+    | Ridondanza | **Archiviazione con ridondanza locale (LRS)** |
     
-    **Nota** - Cambiare **xxxx** in modo che il valore di **Nome account di archiviazione** sia univoco
+    **Nota** - Ricordarsi di cambiare **xxxxx** in modo che il valore di **Nome account di archiviazione** sia univoco
 
 5. Fare clic su **Rivedi e crea** per rivedere le impostazioni dell'account di archiviazione e consentire ad Azure di convalidare la configurazione. 
 
@@ -36,7 +42,7 @@ In questa attività verrà creato un nuovo account di archiviazione.
 
     ![Screenshot del nuovo account di archiviazione creato nel portale di Azure.](../images/0401.png)
 
-# Attività 2. Usare archiviazione BLOB
+# <a name="task-2-work-with-blob-storage"></a>Attività 2: Usare l'archiviazione BLOB
 
 In questa attività verrà creato un contenitore BLOB in cui verrà caricato un file BLOB. 
 
@@ -48,7 +54,7 @@ In questa attività verrà creato un contenitore BLOB in cui verrà caricato un 
     | Impostazione | Valore |
     | --- | --- |
     | Nome | **container1**  |
-    | Livello di accesso pubblico| **Privato (nessun accesso anonimo)** |
+    | Livello di accesso pubblico| **Private (no anonymous access) (Privato - nessun accesso anonimo)** |
   
 
     ![Screenshot del nuovo contenitore BLOB creato nell'account di archiviazione nel portale di Azure.](../images/0402.png)
@@ -62,22 +68,22 @@ In questa attività verrà creato un contenitore BLOB in cui verrà caricato un 
    
 6. Fare clic sulla freccia **Avanzate**, lasciare i valori predefiniti ma esaminare le opzioni disponibili, quindi fare clic su **Carica**.
 
-    **Nota**: è possibile caricare un numero qualsiasi di BLOB necessari in questo modo. I nuovi BLOB verranno elencati all'interno del contenitore.
+    **Nota**: è possibile caricare un numero qualsiasi di BLOB in questo modo. I nuovi BLOB verranno elencati all'interno del contenitore.
 
 7. Una volta caricato, fare clic con il pulsante destro del mouse sul file ed esaminare le opzioni disponibili, ossia Visualizza/Modifica, Scarica, Proprietà ed Elimina. 
 
 8. Se si ha tempo, esaminare le opzioni File, Tabelle e Code.
 
-# Attività 3. Monitorare l'account di archiviazione
+# <a name="task-3-monitor-the-storage-account"></a>Attività 3: Monitorare l'account di archiviazione
 
 1. Tornare nel pannello Account di archiviazione e fare clic su **Diagnostica e risoluzione dei problemi**. 
 
 2. Esplorare alcuni problemi di archiviazione più comuni. Notare che qui sono disponibili diversi strumenti di risoluzione dei problemi.
 
-3. Nel pannello Account di archiviazione scorrere in basso fino alla sezione **Monitoraggio** e fare clic su **Informazioni dettagliate**. Come si può notare, sono presenti informazioni relative a errori, prestazioni, disponibilità e capacità. Le informazioni visualizzate variano.
+3. Nel pannello Account di archiviazione, scorrere in basso fino alla sezione **Monitoraggio** e fare clic su **Informazioni dettagliate**. Come si può notare, sono presenti informazioni relative a errori, prestazioni, disponibilità e capacità. Le informazioni visualizzate variano.
 
     ![Screenshot della pagina Informazioni dettagliate dell'account di archiviazione.](../images/0403.PNG)
 
 Congratulazioni! È stato creato un account di archiviazione e quindi sono stati usati i BLOB di archiviazione.
 
-**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse, quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.
+**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse e quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.

@@ -1,13 +1,19 @@
 ---
 wts:
-    title: '13 - Proteggere il traffico di rete (10 min)'
-    module: 'Modulo 04: Descrizione delle funzionalità di sicurezza generali e di rete'
+  title: 13. Proteggere il traffico di rete (10 min)
+  module: 'Module 04: Describe general security and network security features'
+ms.openlocfilehash: 27216b913111de76e00546319b56f69034819918
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907978"
 ---
-# 13 - Proteggere il traffico di rete (10 min)
+# <a name="13---secure-network-traffic-10-min"></a>13. Proteggere il traffico di rete (10 min)
 
 In questa procedura dettagliata verrà configurato un gruppo di sicurezza di rete.
 
-# Attività 1. Creare una macchina virtuale
+# <a name="task-1-create-a-virtual-machine"></a>Attività 1: Creare una macchina virtuale
 
 In questa attività verrà creata una macchina virtuale Windows Server 2019 Datacenter. 
 
@@ -19,15 +25,15 @@ In questa attività verrà creata una macchina virtuale Windows Server 2019 Data
 
     | Impostazioni | Valori |
     |  -- | -- |
-    | Sottoscrizione | **Usare l'impostazione predefinita fornita** |
-    | Gruppo di risorse | **Crea nuovo gruppo di risorse** |
-    | Nome della macchina virtuale | **SimpleWinVM** |
-    | Area | **(Stati Uniti) Stati Uniti orientali**|
+    | Subscription | **Usare l'impostazione predefinita fornita** |
+    | Resource group | **Creare un nuovo gruppo di risorse** |
+    | Nome macchina virtuale | **SimpleWinVM** |
+    | Region | **(Stati Uniti) Stati Uniti orientali**|
     | Immagine | **Windows Server 2019 Datacenter Gen 2**|
-    | Dimensioni | **Standard D2s v3**|
+    | Dimensione | **Standard D2s v3**|
     | Nome utente account amministratore | **azureuser** |
     | Password account amministratore | **Pa$$w0rd1234**|
-    | Regole porte in ingresso | **Nessuna**|
+    | Regole porta in ingresso | **Nessuno**|
 
 4. Passare alla scheda **Rete** e configurare l'impostazione seguente:
 
@@ -53,7 +59,7 @@ In questa attività verrà creata una macchina virtuale Windows Server 2019 Data
 
     **Nota**: identificare il nome dell'interfaccia di rete. Sarà necessario nell'attività successiva.
 
-# Attività 2. Creare un gruppo di sicurezza di rete
+# <a name="task-2-create-a-network-security-group"></a>Attività 2: Creare un gruppo di sicurezza di rete
 
 In questa attività verrà creato un gruppo di sicurezza di rete che verrà associato all'interfaccia di rete. 
 
@@ -63,20 +69,20 @@ In questa attività verrà creato un gruppo di sicurezza di rete che verrà asso
 
     | Impostazione | Valore |
     | -- | -- |
-    | Sottoscrizione | **Usare la sottoscrizione predefinita** |
-    | Gruppo di risorse | **Selezionare l'impostazione predefinita dall'elenco a discesa** |
+    | Subscription | **Usare la sottoscrizione predefinita** |
+    | Resource group | **Selezionare l'impostazione predefinita dall'elenco a discesa** |
     | Nome | **myNSGSecure** |
-    | Area | **(Stati Uniti) Stati Uniti orientali**  |
+    | Region | **(Stati Uniti) Stati Uniti orientali**  |
 
 3. Fare clic su **Rivedi e crea** e, dopo la convalida, su **Crea**.
 
 4. Una volta creato il gruppo di sicurezza di rete, fare clic su **Vai alla risorsa**.
 
-5. In **Impostazioni** fare clic su **Interfacce di rete** e quindi su **Associa**.
+5. In **Impostazioni** fare clic su **Interfacce di rete** e quindi su ** Associa**.
 
 6. Selezionare l'interfaccia di rete identificata nell'attività precedente. 
 
-# Attività 3. Configurare una regola di sicurezza delle porte in ingresso per consentire il traffico RDP
+# <a name="task-3-configure-an-inbound-security-port-rule-to-allow-rdp"></a>Attività 3: Configurare una regola di sicurezza delle porte in ingresso per consentire il traffico RDP
 
 In questa attività verrà consentito il traffico RDP verso la macchina virtuale configurando una regola di sicurezza delle porte in ingresso. 
 
@@ -95,18 +101,18 @@ In questa attività verrà consentito il traffico RDP verso la macchina virtuale
 
     | Impostazione | Valore |
     | -- | -- |
-    | Origine | **Qualsiasi**|
+    | Source (Sorgente) | **qualsiasi**|
     | Intervalli di porte di origine | **\*** |
-    | Destinazione | **Qualsiasi** |
+    | Destination | **qualsiasi** |
     | Intervalli di porte di destinazione | **3389** |
     | Protocollo | **TCP** |
-    | Azione | **Consenti** |
+    | Azione | **Consentito** |
     | Priorità | **300** |
     | Nome | **AllowRDP** |
 
 6. Selezionare **Aggiungi**, attendere che venga eseguito il provisioning della regola, quindi ritentare la connessione RDP alla macchina virtuale ritornando all'opzione **Connetti**. Questa volta la connessione dovrebbe riuscire. Ricordare che l'utente è **azureuser** e la password è **Pa$$w0rd1234**.
 
-# Attività 4. Configurare una regola di sicurezza delle porte in uscita per negare l'accesso a Internet
+# <a name="task-4-configure-an-outbound-security-port-rule-to-deny-internet-access"></a>Attività 4: Configurare una regola di sicurezza delle porte in uscita per negare l'accesso a Internet
 
 In questa attività verrà creata una regola delle porte in uscita del gruppo di sicurezza di rete che negherà l'accesso a Internet e quindi verrà testato il funzionamento della regola.
 
@@ -128,9 +134,9 @@ In questa attività verrà creata una regola delle porte in uscita del gruppo di
 
     | Impostazione | Valore |
     | -- | -- |
-    | Origine | **Qualsiasi**|
+    | Source (Sorgente) | **qualsiasi**|
     | Intervalli di porte di origine | **\*** |
-    | Destinazione | **Tag del servizio** |
+    | Destination | **Tag del servizio** |
     | Tag del servizio di destinazione | **Internet** |
     | Intervalli di porte di destinazione | **\*** |
     | Protocollo | **TCP** |

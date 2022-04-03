@@ -1,13 +1,19 @@
 ---
 wts:
-    title: '11 - Creare una macchina virtuale con l’interfaccia della riga di comando (10 min)'
-    module: 'Modulo 03: Descrizione delle soluzioni e degli strumenti di gestione principali'
+  title: 11. Creare una macchina virtuale con l'interfaccia della riga di comando (10 min)
+  module: 'Module 03: Describe core solutions and management tools'
+ms.openlocfilehash: 6e88e520011ccf4f1d02fd14038a457226492082
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137908002"
 ---
-# 11. Creare una macchina virtuale con l'interfaccia della riga di comando (10 min)
+# <a name="11---create-a-vm-with-the-cli-10-min"></a>11. Creare una macchina virtuale con l'interfaccia della riga di comando (10 min)
 
-In questa procedura dettagliata verrà configurato Cloud Shell, verrà usata l'interfaccia della riga di comando di Azure per creare un gruppo di risorse e una macchina virtuale, quindi verranno esaminate le raccomandazioni di Azure Advisor. 
+In questa procedura dettagliata verrà configurato Cloud Shell, verrà usata l'interfaccia della riga di comando di Azure per creare un gruppo di risorse e una macchina virtuale, quindi verranno esaminate gli elementi consigliati di Azure Advisor. 
 
-# Attività 1. Configurare Cloud Shell 
+# <a name="task-1-configure-the-cloud-shell"></a>Attività 1: Configurare Cloud Shell 
 
 In questa attività, verrà configurato Cloud Shell, quindi si userà l'interfaccia della riga di comando di Azure per creare un gruppo di risorse e una macchina virtuale.  
 
@@ -15,19 +21,19 @@ In questa attività, verrà configurato Cloud Shell, quindi si userà l'interfac
 
 2. Nel portale di Azure aprire **Azure Cloud Shell** facendo clic sull'icona nell'angolo in alto a destra.
 
-    ![Screenshot dell'icona Azure Cloud Shell nel portale di Azure.](../images/1002.png)
+    ![Screenshot dell'icona di Azure Cloud Shell nel portale di Azure.](../images/1002.png)
    
 3. Nella finestra di dialogo Benvenuti in Azure Cloud Shell, quando viene richiesto di selezionare **Bash** o **PowerShell**, selezionare **Bash**. 
 
 4. Si apre una nuova finestra con il messaggio **Non sono state montate risorse di archiviazione**. Selezionare **impostazioni avanzate**.
 
 5. Nella schermata delle impostazioni avanzate, riempire i seguenti campi, quindi fare clic su Crea risorse di archiviazione:
-    - Gruppo di risorse: **Crea nuovo gruppo di risorse**
-    - Account di archiviazione: Creare un nuovo account di archiviazione e usare un nome che sia univoco a livello globale (ad esempio: cloudshellstoragemystorage)
+    - Gruppo di risorse: **Creare nuovo gruppo di risorse**
+    - Account di archiviazione: Creare un nuovo account di archiviazione e usare un nome che sia univoco a livello globale (ad esempio: cloudshellxyzstorage)
     - Condivisione file: Creare un nuovo file con il nome cloudshellfileshare
 
 
-# Attività 2. Usare l'interfaccia della riga di comando per creare una macchina virtuale
+# <a name="task-2-use-cli-to-create-a-virtual-machine"></a>Attività 2: Usare l'interfaccia della riga di comando per creare una macchina virtuale
 
 In questa attività verranno creati un gruppo di risorse e una macchina virtuale con l'interfaccia della riga di comando di Azure.
 
@@ -42,7 +48,7 @@ In questa attività verranno creati un gruppo di risorse e una macchina virtuale
     az group list --output table
     ```
 
-4. In Cloud Shell, immettere i comando sotto riportato e accertarsi che ciascuna riga, eccetto l'ultima, sia seguita da una barra retroversa (`\`). Se si digita l'intero comando sulla stessa riga, non usare questi caratteri. 
+4. In Cloud Shell, immettere il comando sotto riportato e accertarsi che ciascuna riga, eccetto l'ultima, sia seguita da una barra rovesciata (`\`). Se si digita l'intero comando sulla stessa riga, non usare questi caratteri. 
 
     ```cli
     az vm create \
@@ -65,13 +71,13 @@ In questa attività verranno creati un gruppo di risorse e una macchina virtuale
     ![Screenshot della pagina Macchine virtuali con myVMPS in esecuzione.](../images/1101.png)
 
 
-# Attività 3. Eseguire comandi in Cloud Shell
+# <a name="task-3-execute-commands-in-the-cloud-shell"></a>Attività 3: Eseguire comandi in Cloud Shell
 
-In questa attività si sperimenterà con l'esecuzione dei comandi dell'interfaccia della riga di comando in Cloud Shell. 
+In questa attività si farà pratica con l'esecuzione dei comandi dell'interfaccia della riga di comando in Cloud Shell. 
 
 1. Nel portale di Azure aprire **Azure Cloud Shell** facendo clic sull'icona nell'angolo in alto a destra.
 
-2. Assicurarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **Bash**.
+2. Accertarsi che nel menu a discesa nell'angolo in alto a sinistra del riquadro Cloud Shell sia selezionato **Bash**.
 
 3. Recuperare le informazioni sulla macchina virtuale di cui è stato effettuato il provisioning, come nome, gruppo di risorse, località e stato. Notare che lo stato è **in esecuzione**.
 
@@ -85,13 +91,13 @@ In questa attività si sperimenterà con l'esecuzione dei comandi dell'interfacc
     az vm stop --resource-group myRGCLI --name myVMCLI
     ```
 
-5. Verificare lo stato della macchina virtuale. Lo stato dovrebbe ora essere **arrestato**.
+5. Verificare lo stato della macchina virtuale. Lo stato dovrebbe ora essere **arrestata**.
 
     ```cli
     az vm show --resource-group myRGCLI --name myVMCLI --show-details --output table 
     ```
 
-# Attività 4. Esaminare le raccomandazioni di Azure Advisor
+# <a name="task-4-review-azure-advisor-recommendations"></a>Attività 4: Esaminare le raccomandazioni di Azure Advisor
 
 In questa attività verranno esaminate le raccomandazioni di Azure Advisor.
 
@@ -99,7 +105,7 @@ In questa attività verranno esaminate le raccomandazioni di Azure Advisor.
 
 1. Nel pannello **Tutti i servizi** cercare e selezionare **Advisor**. 
 
-2. Nel pannello **Advisor** selezionare **Panoramica**. Le raccomandazioni sono raggruppate in base ad Affidabilità, Sicurezza, Prestazioni e Costo. 
+2. Nel pannello **Advisor** selezionare **Panoramica**. Si noti che le raccomandazioni sono raggruppate in base ad Affidabilità, Sicurezza, Prestazioni e Costo. 
 
     ![Screenshot della pagina Panoramica di Advisor. ](../images/1103.png)
 
@@ -113,8 +119,8 @@ In questa attività verranno esaminate le raccomandazioni di Azure Advisor.
 
 5. È anche possibile creare avvisi. 
 
-6. Se si ha tempo, continuare a sperimentare con l'interfaccia della riga di comando di Azure. 
+6. Se si ha tempo, continuare a fare pratica con l'interfaccia della riga di comando di Azure. 
 
 Congratulazioni! È stato configurato Cloud Shell, è stata creata una macchina virtuale con l'interfaccia della riga di comando di Azure, sono stati provati i comandi dell'interfaccia della riga di comando di Azure e sono state visualizzate le raccomandazioni di Advisor.
 
-**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse, quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.
+**Nota**: per evitare costi aggiuntivi, è possibile rimuovere questo gruppo di risorse. Cercare e selezionare il gruppo di risorse, quindi fare clic su **Elimina gruppo di risorse**. Verificare il nome del gruppo di risorse e quindi fare clic su **Elimina**. Monitorare la pagina **Notifiche** per verificare l'avanzamento dell'eliminazione.

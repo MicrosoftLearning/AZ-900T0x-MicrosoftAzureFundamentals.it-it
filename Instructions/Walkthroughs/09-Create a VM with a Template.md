@@ -1,48 +1,54 @@
 ---
 wts:
-    title: '09 - Creare una VM con un modello (10 min)'
-    module: 'Modulo 03: Descrizione delle soluzioni e degli strumenti di gestione principali'
+  title: 09. Creare una VM con un modello (10 min)
+  module: 'Module 03: Describe core solutions and management tools'
+ms.openlocfilehash: d4d29b62fc5dfa2e050ac51fcf4d5067e8fd3283
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137908027"
 ---
-# 09 - Creare una VM con un modello (10 min)
+# <a name="09---create-a-vm-with-a-template-10-min"></a>09. Creare una VM con un modello (10 min)
 
 In questa procedura dettagliata verrà distribuita una macchina virtuale con un modello di avvio rapido e verranno esaminate le funzionalità di monitoraggio.
 
-# Attività 1. Esplorare la raccolta di modelli di avvio rapido e individuare un modello 
+# <a name="task-1-explore-the-quickstart-gallery-and-locate-a-template"></a>Attività 1: Esplorare la raccolta di modelli di avvio rapido e individuare un modello 
 
-In questa attività verrà esplorata la raccolta di avvio rapido di Azure e verrà distribuito un modello per la creazione di una macchina virtuale. 
+In questa attività verrà esplorata la raccolta di modelli di avvio rapido di Azure e verrà distribuito un modello per la creazione di una macchina virtuale. 
 
-1. Nell'ambiente del lab, aprire una nuova finestra del browser e immettere T https://azure.microsoft.com/it-it/resources/templates/?azure-portal=true. La raccolta contiene numerosi modelli ampiamente diffusi e aggiornati di recente. Questi modelli automatizzano la distribuzione delle risorse di Azure, inclusa l'installazione dei pacchetti software più diffusi. Esplorare i vari tipi diversi di modelli disponibili.
+1. All'interno dell'ambiente lab aprire una nuova finestra del browser e immettere T https://azure.microsoft.com/en-us/resources/templates/?azure-portal=true. La raccolta contiene numerosi modelli ampiamente diffusi e aggiornati di recente. Questi modelli automatizzano la distribuzione delle risorse di Azure, inclusa l'installazione dei pacchetti software più diffusi. Esplorare i vari tipi diversi di modelli disponibili.
 
-2. Selezionare **Distribuisci una macchina virtuale Windows semplice**
+3. Selezionare **Distribuisci una macchina virtuale Windows semplice**
 
-3. Fare clic sul pulsante **Distribuisci in Azure**. La sessione del browser verrà automaticamente reindirizzata al [portale di Azure](http://portal.azure.com/).
+4. Fare clic sul pulsante **Distribuisci in Azure**. La sessione del browser verrà automaticamente reindirizzata al [portale di Azure](http://portal.azure.com/).
 
   **Nota**: il pulsante **Distribuisci in Azure** consente di distribuire il modello tramite il portale di Azure. Durante tale distribuzione verrà chiesto di specificare solo un set ridotto di parametri di configurazione. 
 
-4. Quando richiesto, accedere alla propria sottoscrizione di Azure usando le credenziali fornite precedentemente in queste istruzioni.
+5. Quando richiesto, accedere alla sottoscrizione di Azure usando le credenziali fornite in precedenza nelle istruzioni.
 
-5. Fare clic su **Modifica modello**. Il modello di Resource Manager è in formato JSON. Esaminare i parametri e le variabili.  Quindi individuare il parametro relativo al nome della macchina virtuale. Cambiare il nome in **myVMTemplate**. Far clic su **Salva** per salvare le modifiche. 
+6. Fare clic su **Modifica modello**. Il modello di Resource Manager è in formato JSON. Esaminare i parametri e le variabili.  Quindi individuare il parametro relativo al nome della macchina virtuale. Cambiare il nome in **myVMTemplate**. **Salvare** le modifiche. 
 
     ![Screenshot del modello con il nome della VM cambiato evidenziato.](../images/0901.png)
 
-6. Ora configurare i parametri necessari per il modello (sostituire ***xxxx*** nel prefisso dell'etichetta DNS con lettere e numeri in modo che l'etichetta sia univoca a livello globale). Lasciare i valori predefiniti per tutto il resto. 
+7. Configurare ora i parametri necessari per il modello (sostituire ***xxxx*** nel prefisso dell'etichetta DNS con lettere e numeri in modo che l'etichetta sia univoca a livello globale). Lasciare i valori predefiniti per tutto il resto. 
 
     | Impostazione| Valore|
     |----|----|
-    | Sottoscrizione | **Mantenere le informazioni predefinite fornite**|
-    | Gruppo di risorse | **Crea nuovo gruppo di risorse** |
-    | Area | Mantenere l'impostazione predefinita |
+    | Subscription | **Mantenere l'impostazione predefinita fornita**|
+    | Resource group | **Creare un nuovo gruppo di risorse** |
+    | Region | mantenere il valore predefinito  |
     | Nome utente amministratore | **azureuser** |
     | Password amministratore | **Pa$$w0rd1234** |
     | Prefisso etichetta DNS | **myvmtemplatexxxx** |
-    | Versione del sistema operativo | **2019-Datacenter** |
+    | Versione sistema operativo | **2019-Datacenter** |
 
 
-7. Fare clic su **Rivedi e crea**.
+9. Fare clic su **Rivedi e crea**.
 
-8. Monitorare la distribuzione. 
+10. Monitorare la distribuzione. 
 
-# Attività 2. Verificare e monitorare la distribuzione della macchina virtuale
+# <a name="task-2-verify-and-monitor-your-virtual-machine-deployment"></a>Attività 2: Verificare e monitorare la distribuzione della macchina virtuale
 
 In questa attività si verificherà se la macchina virtuale è stata distribuita correttamente. 
 
@@ -56,13 +62,13 @@ In questa attività si verificherà se la macchina virtuale è stata distribuita
 
     **Nota**: l'intervallo di monitoraggio può essere modificato da un'ora a 30 giorni.
 
-4. Esaminare i diversi grafici disponibili, tra cui **CPU (media)**, **Rete (totale)** e **Byte disco (totale)**. 
+4. Esaminare i diversi grafici disponibili, tra cui **CPU (media)** , **Rete (totale)** e **Byte disco (totale)** . 
 
     ![Screenshot dei grafici di monitoraggio delle macchine virtuali.](../images/0903.png)
 
 5. Fare clic su un grafico qualsiasi. È possibile scegliere **Aggiungi metrica** e cambiare il tipo di grafico.
 
-6. Tornare nel pannello **Panoramica**. (far scorrere la barra di attivazione/disattivazione verso sinistra)
+6. Tornare nel pannello **Panoramica** (far scorrere la barra di attivazione/disattivazione verso sinistra)
 7. Fare clic su **Log attività** nel riquadro sinistro. I log attività registrano eventi come la creazione o la modifica di risorse. 
 
 8. Fare clic su **Aggiungi filtro** e sperimentare con la ricerca di vari tipi di evento e operazioni. 

@@ -1,13 +1,19 @@
 ---
 wts:
-    title: '14 - Gestire l'accesso con il controllo degli accessi in base al ruolo (5 min)'
-    module: 'Modulo 05: Descrizione delle funzionalità di identità, governance, privacy e conformità'
+  title: 14. Gestire l'accesso con il controllo degli accessi in base al ruolo (5 min)
+  module: 'Module 05: Describe identity, governance, privacy, and compliance features'
+ms.openlocfilehash: 4d1369307dc306a367a8a4cc532774c08c513e85
+ms.sourcegitcommit: 26c283fffdd08057fdce65fa29de218fff21c7d0
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137907737"
 ---
-# 14 - Gestire l'accesso con il controllo degli accessi in base al ruolo (5 min)
+# <a name="14---manage-access-with-rbac-5-min"></a>14. Gestire l'accesso con il controllo degli accessi in base al ruolo (5 min)
 
 In questa procedura dettagliata verranno assegnati ruoli di autorizzazione alle risorse e verranno visualizzati i log.
 
-# Attività 1. Visualizzare e assegnare i ruoli
+# <a name="task-1-view-and-assign-roles"></a>Attività 1: Visualizzare e assegnare i ruoli
 
 In questa attività verrà assegnato il ruolo Collaboratore Macchina virtuale. 
 
@@ -19,23 +25,23 @@ In questa attività verrà assegnato il ruolo Collaboratore Macchina virtuale.
 
     | Impostazione | Valore |
     | -- | -- |
-    | Sottoscrizione | **Usare l'impostazione predefinita fornita** |
-    | Gruppo di risorse | **myRGRBAC** |
-    | Area | **(Stati Uniti) Stati Uniti orientali** |
+    | Subscription | **Usare l'impostazione predefinita fornita** |
+    | Resource group | **myRGRBAC** |
+    | Region | **(Stati Uniti) Stati Uniti orientali** |
    
 
 4. Fare clic su **Rivedi e crea** e quindi su **Crea**.
 
 5. Scegliere **Aggiorna** per aggiornare la pagina del gruppo di risorse, quindi fare clic sulla voce che rappresenta il nuovo gruppo di risorse creato.
 
-6. Fare clic sul pannello **Controllo di accesso (IAM)** e quindi passare alla scheda **Ruoli**. Scorrere il numero elevato di definizioni dei ruoli disponibili. Usare le icone di informazioni per avere un'idea delle autorizzazioni di ogni ruolo. Sono anche disponibili informazioni sul numero di utenti e gruppi assegnati a ogni ruolo.
+6. Fare clic sul pannello **Controllo di accesso (IAM)** e quindi passare alla scheda **Ruoli**. Scorrere il numero elevato di definizioni del ruolo disponibili. Usare le icone di informazioni per avere un'idea delle autorizzazioni di ogni ruolo. Sono anche disponibili informazioni sul numero di utenti e gruppi assegnati a ogni ruolo.
+7. 
+![image](https://user-images.githubusercontent.com/89808319/144266949-f19d91ab-31d6-4c8b-af36-c00035925cf0.png)
 
-![immagine](https://user-images.githubusercontent.com/89808319/144266949-f19d91ab-31d6-4c8b-af36-c00035925cf0.png)
-
-7. Passare alla scheda **Assegnazioni di ruolo** del pannello **myRGRBAC - Controllo di accesso (IAM)**, fare clic su **+ Aggiungi** e quindi fare clic su **Aggiungi assegnazione di ruolo**. Cercare il ruolo Virtual Machine Contributor e selezionarlo. Passare alla scheda "Membri" e assegnare l'accesso a: Utente, gruppo o entità servizio. Quindi fare clic su + Selezionare membri e digitare il proprio nome nella funzione di ricerca popup e premere "seleziona". Quindi premere "Verifica e assegna"
+7. Passare alla scheda **Assegnazioni di ruolo** del pannello **myRGRBAC - Controllo di accesso (IAM)** , fare clic su **+ Aggiungi** e quindi fare clic su **Aggiungi assegnazione di ruolo**. Cercare il ruolo Collaboratore macchine virtuali e selezionare. Passare alla scheda "Membri" e assegnare l'accesso a: Utente, gruppo o entità servizio. Fare quindi clic su + Seleziona membri e digitare il proprio nome nella funzione di ricerca popup, quindi fare clic su 'Seleziona'. Fare quindi clic su 'Verifica e assegna'
 
     
-    ![immagine](https://user-images.githubusercontent.com/89808319/144266255-3a0f8574-9358-4c21-8f95-3503747e77c8.png)
+    ![image](https://user-images.githubusercontent.com/89808319/144266255-3a0f8574-9358-4c21-8f95-3503747e77c8.png)
 
  
 
@@ -47,7 +53,7 @@ In questa attività verrà assegnato il ruolo Collaboratore Macchina virtuale.
 
     **Nota**: questa assegnazione non concede in realtà privilegi aggiuntivi, perché il proprio account ha già il ruolo Proprietario, che include tutti i privilegi associati al ruolo Collaboratore.
 
-# Attività 2. Monitorare le assegnazioni di ruolo e rimuovere un ruolo
+# <a name="task-2-monitor-role-assignments-and-remove-a-role"></a>Attività 2: Monitorare le assegnazioni di ruolo e rimuovere un ruolo
 
 In questa attività verrà visualizzato il log attività per verificare l'assegnazione del ruolo, quindi verrà rimosso il ruolo. 
 
